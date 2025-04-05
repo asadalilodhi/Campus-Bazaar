@@ -1,7 +1,7 @@
 /* login.css */
 body {
     font-family: 'Poppins', Arial, sans-serif;
-    background-color: #c1a9e4;
+    background: linear-gradient(145deg, #a57e5b, #d3c0b7);
     color: #333;
     margin: 0;
     height: 100vh;
@@ -58,7 +58,7 @@ body {
 
 /* Login Form Container */
 .login-page .login-container {
-    background: linear-gradient(145deg, #e0d4f3, #f6f1fc);
+    background: linear-gradient(145deg, #deb4a4, #f6f1fc);
     padding: 40px;
     border-radius: 16px;
     box-shadow: 0 6px 25px rgba(0,0,0,0.1);
@@ -78,7 +78,7 @@ body {
 .login-page h2 {
     margin-bottom: 25px;
     font-size: 26px;
-    color: #5e005e;
+    color: #915409;
     text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
     font-weight: 600;
@@ -119,14 +119,14 @@ body {
 
 .login-page input[type="text"]:focus,
 .login-page input[type="password"]:focus {
-    border-color: #800080;
-    box-shadow: 0 0 10px rgba(128, 0, 128, 0.3);
+    border-color: #a57e5b;
+    box-shadow: 0 0 10px #a57e5b;
 }
 
 /* Button Styles */
 .login-page button {
     width: 75%;
-    background: linear-gradient(145deg, #800080, #5e005e);
+    background: linear-gradient(145deg, #752a04, #895728);
     color: #fff;
     padding: 12px 0;
     border: none;
@@ -136,13 +136,13 @@ body {
     font-size: 15px;
     font-weight: bold;
     transition: all 0.3s ease-in-out;
-    box-shadow: 0 4px 15px rgba(128, 0, 128, 0.3);
+    box-shadow: 0 4px 15px #a57e5b;
     outline: none;
     letter-spacing: 0.5px;
 }
 
 .login-page button:hover {
-    background: linear-gradient(145deg, #5e005e, #800080);
+    background: linear-gradient(145deg, #a57e5b, #d3c0b7);
     box-shadow: 0 6px 20px rgba(128, 0, 128, 0.4);
     transform: translateY(-3px);
 }
@@ -154,7 +154,7 @@ body {
 
 /* Forgot Password Link */
 .login-page .forgot-password {
-    color: #5e005e;
+    color: #752a04;
     text-decoration: none;
     margin-top: 15px;
     cursor: pointer;
@@ -164,7 +164,7 @@ body {
 }
 
 .login-page .forgot-password:hover {
-    color: #800080;
+    color: #a57e5b;
     text-decoration: underline;
 }
 

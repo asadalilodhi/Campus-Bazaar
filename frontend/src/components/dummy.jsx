@@ -1,19 +1,3 @@
-// import React, { useState } from 'react';
-// import { useNavigate } from 'react-router-dom';
-// import '../styles/signup.css';
-
-// function Signup() {
-//     return (
-//       <div className="signup">
-//         <h1>Sign Up– To be done</h1>
-//       </div>
-//     );
-//   }
-
-//     export default Signup;
-// // this is where the sign up front html goes
-
-
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/login.css';
@@ -26,31 +10,25 @@ function Signup({ onSignup }) {
   const validateSignup = () => {
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
-    const confirmpassword = document.getElementById('passwordconfirm').value;
+    const confirmpassword = document.getElementById('passwordconf').value;
 
-    //to be updated: if username does NOT equal to any in the database
-    if (password !== confirmpassword) {
-      setErrorMessage('Passwords do not match.');
-    } else if (username === 'test2') {
-      setErrorMessage('An account with that username already exists.');
-    } else {
+    if (username === 'test2' && password === '12345') {
       console.log('Account created! Please proceed to login now');
       setErrorMessage('');
-      //onSignup();
+      onSignup();
       navigate('/login');
+    } else {
+      setErrorMessage('An account with that already exists. Please try again.');
     }
-    
-
-  
   };
 
   return (
-    <div className="login-page">
+    <div className="signup-page">
       <div className="logo-container">
-        <img src={logo} alt="Campus Bazaar Logo" className="login-logo" />
+        <img src={logo} alt="Campus Bazaar Logo" className="signup-logo" />
       </div>
 
-      <div className="login-container">
+      <div className="signup-container">
         <form onSubmit={(e) => e.preventDefault()}>
           <h2>Signup</h2>
           <div className="input-group">
@@ -63,15 +41,14 @@ function Signup({ onSignup }) {
           </div>
 
           <div className="input-group">
-            <label htmlFor="passwordconfirm">Confirm Password</label>
-            <input type="password" id="passwordconfirm" required />
+            <label htmlFor="confirm password">Password</label>
+            <input type="passwordconfirm" id="passwordconfirm" required />
           </div>
 
-          <div className="button-group">
-          <button type="button" onClick={() => navigate('/login')}>Back to Login</button>
-            <button type="button" onClick={validateSignup}>Signup</button>
-            {/* <button type="button" onClick={() => navigate('/signup')}>Sign Up</button> */}
-          </div>
+          {/* <div className="button-group">
+            <button type="button" onClick={validateLogin}>Login</button>
+            <button type="button" onClick={() => navigate('/signup')}>Sign Up</button>
+          </div> */}
 
           {errorMessage && (
             <div className="error-message visible">
