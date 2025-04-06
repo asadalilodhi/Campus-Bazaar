@@ -7,17 +7,30 @@ function Login({ onLogin }) {
   const [errorMessage, setErrorMessage] = useState('');
   const navigate = useNavigate();
 
-  const validateLogin = () => {
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
+  const validateLogin = async () => {
+    const username = document.getElementById('username').value.trim();
+    const password = document.getElementById('password').value.trim();
 
-    if (username === 'test' && password === '1234') {
-      console.log('Login successful');
-      setErrorMessage('');
-      onLogin();
-      navigate('/homepage');
-    } else {
-      setErrorMessage('Invalid username or password. Please try again.');
+    try {
+      const response = await fetch('http://localhost:5000/api/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username, password }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.token) {
+        localStorage.setItem('token', data.token);
+        setErrorMessage('');
+        onLogin();
+        navigate('/homepage');
+      } else {
+        setErrorMessage(data.msg || 'Invalid credentials. Please try again.');
+      }
+    } catch (error) {
+      console.error('Login Error:', error);
+      setErrorMessage('An error occurred. Please try again.');
     }
   };
 
