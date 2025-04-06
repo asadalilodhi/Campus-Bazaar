@@ -1,12 +1,164 @@
-.forgot_pass {
+/* Forgot Password Page Styling - matches login/signup styles */
+body {
+    font-family: 'Poppins', Arial, sans-serif;
     background-color: #c1a9e4;
+    color: #333;
+    margin: 0;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'Poppins', Arial, sans-serif;
-    color: #4b004b;
-    font-size: 32px;
+  }
+  
+  .forgot-page {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 50px;
+    animation: fadeIn 1.2s ease-in-out;
+  }
+  
+  /* Logo */
+  .forgot-page .logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+  }
+  
+  .forgot-page .login-logo {
+    width: 60%;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .forgot-page .login-logo:hover {
+    transform: rotate(-10deg) scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Container Styling */
+  .forgot-container {
+    background: linear-gradient(145deg, #e0d4f3, #f6f1fc);
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+    width: 340px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: float 2s ease-in-out infinite;
+  }
+  
+  .forgot-container h2 {
+    margin-bottom: 10px;
+    font-size: 26px;
+    color: #5e005e;
+    text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
     font-weight: 600;
-    text-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
-}
+  }
+  
+  .forgot-container p {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 13px;
+    color: #555;
+    text-align: center;
+  }
+  
+  .forgot-container form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .input-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 18px;
+  }
+  
+  .input-group label {
+    font-size: 14px;
+    color: #555;
+    align-self: flex-start;
+    margin-left: 30px;
+    margin-bottom: 5px;
+  }
+  
+  .input-group input[type="text"] {
+    width: 75%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    color: #333;
+    font-size: 15px;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .input-group input[type="text"]:focus {
+    border-color: #800080;
+    box-shadow: 0 0 10px rgba(128, 0, 128, 0.3);
+  }
+  
+  /* Button */
+  .forgot-container button {
+    width: 75%;
+    background: linear-gradient(145deg, #800080, #5e005e);
+    color: #fff;
+    padding: 12px 0;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 15px rgba(128, 0, 128, 0.3);
+    outline: none;
+    letter-spacing: 0.5px;
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  .forgot-container button:hover {
+    background: linear-gradient(145deg, #5e005e, #800080);
+    box-shadow: 0 6px 20px rgba(128, 0, 128, 0.4);
+    transform: translateY(-3px);
+  }
+  
+  .forgot-container button:active {
+    transform: translateY(1px);
+    box-shadow: 0 3px 10px rgba(128, 0, 128, 0.2);
+  }
+  
+  /* Success Message */
+  .success-message {
+    background-color: #dff0d8;
+    color: #3c763d;
+    border-left: 5px solid #3c763d;
+    padding: 12px;
+    margin-top: 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 100%;
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    0% { opacity: 0; transform: scale(0.95); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  
