@@ -50,6 +50,10 @@ mongoose.connect(process.env.MONGO_URI, {
 // ✅ Routes
 const authRoutes = require('./routes/auth');
 const signupRoutes = require('./routes/signup');
+const forgotRoutes = require('./routes/forgot');
+const resetPasswordRoute = require('./routes/resetpassword');
+app.use('/api/reset-password', resetPasswordRoute);
+app.use('/api/forgot', forgotRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/signup', signupRoutes);
 
